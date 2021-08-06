@@ -20,6 +20,8 @@ def two_way_merge(source1: str, source1label: str, source2: str, source2label: s
     for filename in os.listdir(source2):
         if filename.endswith((".jpg",".jpeg","png","gif")):
             folder2.append(filename)
+    folder1.sort()
+    folder2.sort()
     myFont = ImageFont.truetype("src/arial.ttf", 60)
     for combo in zip(folder1,folder2):
         image1 = Image.open(source1 + "/" + combo[0])
@@ -62,6 +64,10 @@ def four_way_merge(source1,source1label,source2,source2label,source3,source3labe
     for filename in os.listdir(source4):
         if filename.endswith((".jpg",".jpeg","png","gif")):
             folder4.append(filename)
+    folder1.sort()
+    folder2.sort()
+    folder3.sort()
+    folder4.sort()
     for file1,file2,file3,file4 in zip(folder1,folder2,folder3,folder4):
         image1 = Image.open(source1 + "/" + file1)
         d1 = ImageDraw.Draw(image1)
@@ -103,6 +109,9 @@ def three_way_merge(source1,source1label,source2,source2label,source3,source3lab
     for filename in os.listdir(source3):
         if filename.endswith((".jpg",".jpeg","png","gif")):
             folder3.append(filename)
+    folder1.sort()
+    folder2.sort()
+    folder3.sort()
     for file1,file2,file3 in zip(folder1,folder2,folder3):
         image1 = Image.open(source1 + "/" + file1)
         d1 = ImageDraw.Draw(image1)
