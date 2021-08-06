@@ -22,6 +22,8 @@ def two_way_merge(source1: str, source1label: str, source2: str, source2label: s
             folder2.append(filename)
     folder1.sort()
     folder2.sort()
+    print(folder1)
+    print(folder2)
     myFont = ImageFont.truetype("src/arial.ttf", 60)
     for combo in zip(folder1,folder2):
         image1 = Image.open(source1 + "/" + combo[0])
